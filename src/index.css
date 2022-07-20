@@ -1,23 +1,25 @@
 body {
   padding: 0;
   margin: 0;
-  min-height: 400vh;
-  background-color: rgb(0, 0, 0);
   animation: body 1s linear;
 }
 .navBar {
-  margin-top: 3px;
+  padding-top: 3px;
   position: fixed;
   height: 8vh;
   width: 100vw;
   background-color: black;
   border-bottom: 1px solid white;
 }
+.main-container {
+  width: 100vw;
+}
 .htmlImports {
   height: 100vh;
   width: 100vw;
   display: block;
 }
+/* progress bar */
 .progress {
   height: 3px;
   width: 0%;
@@ -43,6 +45,7 @@ body {
   animation-iteration-count: 1;
   animation-fill-mode: both;
 }
+/* progress bar end */
 
 /* mouse cursor */
 
@@ -58,8 +61,10 @@ body {
 
 @media (hover: hover) and (pointer: fine) {
   .cursor__circle {
-    width: 64px;
-    height: 64px;
+    mix-blend-mode: difference;
+    width: 10px;
+    height: 10px;
+    background-color: white;
     margin-top: -50%;
     margin-left: -50%;
     border-radius: 50%;
@@ -70,7 +75,6 @@ body {
       width 0.3s cubic-bezier(0.25, 1, 0.5, 1),
       height 0.3s cubic-bezier(0.25, 1, 0.5, 1);
   }
-
   #cursor.arrow .cursor__circle {
     width: 128px;
     height: 128px;
@@ -101,3 +105,27 @@ body {
     border-color: transparent;
   }
 }
+/* mouse cursor end */
+
+.resume {
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
+}
+.skills {
+  background-color: white;
+  height: 100vh;
+  width: 100vw;
+}
+.projects {
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
+}
+/* .contactl {
+  background-color: white;
+  height: 100vh;
+  width: 100vw;
+} */
+
+/*  */

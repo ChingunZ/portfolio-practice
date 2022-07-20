@@ -1,3 +1,4 @@
+document.body.style.cursor = "none"
 window.addEventListener(
   "scroll",
   () => {
@@ -76,29 +77,13 @@ function onResize() {
     requestId = requestAnimationFrame(updateScroller);
   }
 }
-
-gsap.set('.main', {position:'fixed', background:'#fff', width:'100%', maxWidth:'1200px', height:'100%', top:0, left:'50%', x:'-50%'})
-gsap.set('.scrollDist', {width:'100%', height:'200%'})
-gsap.timeline({scrollTrigger:{trigger:'.scrollDist', start:'top top', end:'bottom bottom', scrub:1}})
-    .fromTo('.sky', {y:0},{y:-200}, 0)
-    .fromTo('.cloud1', {y:100},{y:-800}, 0)
-    .fromTo('.cloud2', {y:-150},{y:-500}, 0)
-    .fromTo('.cloud3', {y:-50},{y:-650}, 0)
-    .fromTo('.mountBg', {y:-10},{y:-100}, 0)
-    .fromTo('.mountMg', {y:-30},{y:-250}, 0)
-    .fromTo('.mountFg', {y:-50},{y:-600}, 0)
-
-$('#arrowBtn').on('mouseenter', (e)=>{ gsap.to('.arrow', {y:10, duration:0.8, ease:'back.inOut(3)', overwrite:'auto'}); })
-$('#arrowBtn').on('mouseleave', (e)=>{ gsap.to('.arrow', {y:0, duration:0.5, ease:'power3.out', overwrite:'auto'}); })
-$('#arrowBtn').on('click', (e)=>{ gsap.to(window, {scrollTo:innerHeight, duration:1.5, ease:'power1.inOut'}); })
-
 // mouse cursor
 const cursor = document.querySelector('#cursor');
 const cursorCircle = cursor.querySelector('.cursor__circle');
 
 const mouse = { x: -100, y: -100 }; // mouse pointer's coordinates
 const pos = { x: 0, y: 0 }; // cursor's coordinates
-const speed = 0.1; // between 0 and 1
+const speed = 1; // between 0 and 1
 
 const updateCoordinates = e => {
   mouse.x = e.clientX;
