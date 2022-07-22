@@ -83,7 +83,7 @@ const cursorCircle = cursor.querySelector('.cursor__circle');
 
 const mouse = { x: -100, y: -100 }; // mouse pointer's coordinates
 const pos = { x: 0, y: 0 }; // cursor's coordinates
-const speed = 1; // between 0 and 1
+const speed = 0.5; // between 0 and 1
 
 const updateCoordinates = e => {
   mouse.x = e.clientX;
@@ -101,8 +101,8 @@ function getSqueeze(diffX, diffY) {
   const distance = Math.sqrt(
     Math.pow(diffX, 2) + Math.pow(diffY, 2)
   );
-  const maxSqueeze = 0.15;
-  const accelerator = 1500;
+  const maxSqueeze = 1000.15;
+  const accelerator = 15000;
   return Math.min(distance / accelerator, maxSqueeze);
 }
 
@@ -131,3 +131,27 @@ function loop() {
 }
 
 requestAnimationFrame(loop);
+
+document.addEventListener('click', () => {
+  cursorCircle.classList.add("expand");
+
+  setTimeout(() => {
+      cursorCircle.classList.remove("expand");
+  }, 500)
+})
+
+const hoverables = document.querySelectorAll(".hoverables")
+
+for (let i = 0; i < hoverables.length; i++) {
+  hoverables[i].addEventListener("mouseover", func1, false);
+  hoverables[i].addEventListener("mouseout", func, false);
+  
+  function func()
+  {
+    cursorCircle.classList.remove("hover")
+  }
+  function func1()
+  {  
+     cursorCircle.classList.add("hover")
+  }
+}
