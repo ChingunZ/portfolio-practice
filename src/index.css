@@ -2,6 +2,7 @@ body {
   padding: 0;
   margin: 0;
   animation: body 1s linear;
+  background-color: black;
 }
 ::-webkit-scrollbar {
   width: 0.25vw;
@@ -47,12 +48,13 @@ body {
   display: flex;
   align-items: center;
   background-color: black;
-  border-bottom: 1px solid white;
+  /* border-bottom: 1px solid white; */
+  z-index: 100;
   /* box-shadow: 0 0 5px white, 0 0 0px white inset; */
 }
 .leftPart {
   display: flex;
-  width: 25%;
+  width: 35%;
   height: 100%;
   align-items: center;
   padding-left: 1vw;
@@ -62,13 +64,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  width: 30%;
   height: 100%;
   color: white;
 }
 .rightPart {
   display: flex;
-  width: 25%;
+  width: 35%;
   height: 100%;
   justify-content: flex-end;
   padding-right: 1vw;
@@ -105,7 +107,7 @@ body {
 /* navigation bar and navigation bar content above */
 #cursor {
   position: fixed;
-  z-index: 99;
+  z-index: 99000;
   left: 0;
   top: 0;
   pointer-events: none;
@@ -212,6 +214,43 @@ a {
   background-color: black;
   height: 100vh;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: -19;
+}
+.centerText {
+  margin-top: 15vh;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2vw;
+}
+.resumeDesign {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  position: absolute;
+}
+.resumeCirclesBlack {
+  margin-bottom: 5vh;
+  width: 5vw;
+  height: 5vw;
+  border-radius: 50%;
+  background: black;
+  border: 1px solid white;
+}
+.resumeCirclesWhite {
+  margin-bottom: 5vh;
+  width: 5vw;
+  height: 5vw;
+  border-radius: 50%;
+  background: white;
+  border: 1px solid black;
 }
 /* resume stuff above */
 .skills {
@@ -232,3 +271,196 @@ a {
   width: 100%;
 }
 /* contact stuff above */
+* {
+  margin: 0;
+  padding: 0;
+   -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+.res-container {
+    width: 100%;
+  position: absoulte;
+  margin-bottom: 0;
+}
+
+.res-row {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19 */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  /* NEW - Opera 12.1, Firefox 20+ */
+}
+#box {
+  -webkit-box-flex: 1;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex: 1;
+  /* OLD - Firefox 19- */
+  -webkit-flex: 1;
+  /* Chrome */
+  -ms-flex: 1;
+  /* IE 10 */
+  flex: 1;
+  width: 100%;
+  /* Old syntax, otherwise collapses. */
+  
+}
+/*...................*/
+#block-1 {
+  animation-duration: 1s;	
+	-webkit-animation-duration: 1s;
+animation-iteration-count: 1;
+	animation-timing-function: ease;	
+	-webkit-animation-timing-function: ease;	
+}
+#block-2 {
+ 
+}
+.b3 {
+  position: fixed; 
+}
+
+/*****************/
+#loader-wrap {
+    display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+@keyframes fadeAnimation { 
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+#loading {
+background-color: black;
+height: 100%;
+width: 100%;
+position: fixed;
+z-index: 10000;
+margin-top: 0px;
+top: 0px;
+}
+/***************/
+#loading-center{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+#loading-center-absolute {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	height: 200px;
+	width: 200px;
+	margin-top: -100px;
+	margin-left: -100px;
+}
+#object{
+	width: 200px;
+	height: 200px;
+  Background-image: url(https://reech.ca/wp-content/uploads/2017/09/reech-logo-no-text.svg);
+  background-repeat: no-repeat;
+  margin-right: auto;
+	margin-left: auto;
+	margin-top: 20px;
+}
+
+/***************************/
+
+#object {
+  animation: object .8s linear;
+  transform-origin: center center;
+}
+@keyframes object {
+  0%{transform: scale(0); opacity: 0}
+  50%{transform: scale(1.5); opacity: 1}
+  100% {transform: scale(1); opacity:1}
+}
+
+/*********loader line******************/
+#loader {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -50px;
+  width: 100px;
+  height: 3px;
+  overflow: hidden;
+}
+#loader:before, #loader:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 3px;
+  transform: translate(-100%, 0);
+}
+#loader:before {
+  background-color: #0e3b5a;
+  animation: loading 3400ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+#loader:after {
+  background-color: #fff;
+  animation: loading 2500ms 500ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@keyframes loading {
+  75% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(100%, 0);
+  }
+}
+/* page loaded above */
+
+.scrolling-words-container {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 600; 
+}
+
+.scrolling-words-box {
+  height: 3rem;
+  margin: auto;
+  overflow: hidden;
+  
+ 
+}
+li {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      height: 3rem;
+      list-style: none; 
+    }
+ul {
+    margin: 0 0.625rem;
+    padding: 0;
+    animation: scrollUp 4s infinite;
+    
+  }
+  
+$item-count: 5;
+
+@keyframes scrollUp {
+  @for $i from 1 through ($item-count - 1) {
+    #{($i * 25) - 10%}, #{$i * 25%} {
+      transform: translateY((-100% / $item-count) * $i);
+    }
+  }
+}

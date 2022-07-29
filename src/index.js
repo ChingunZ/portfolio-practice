@@ -1,4 +1,4 @@
-// document.body.style.cursor = "none"
+document.body.style.cursor = "none"
 window.addEventListener(
   "scroll",
   () => {
@@ -155,3 +155,71 @@ for (let i = 0; i < hoverables.length; i++) {
      cursorCircle.classList.add("hover")
   }
 }
+
+const bg = document.querySelector('.resume');
+const windowWidth = window.innerWidth / 2.5;
+const windowHeight = window.innerHeight / 2.5 ;
+
+bg.addEventListener('mousemove', (e) => {
+  const mouseX = e.clientX / windowWidth;
+  const mouseY = e.clientY / windowHeight;
+  
+  bg.style.transform = `translate3d(-${mouseX}%, -${mouseY}%, 0)`;
+});
+
+
+document.addEventListener(
+  "DOMContentLoaded",
+  function() {
+    setTimeout(function() {    document.getElementById("loading").style.animation = "fadeAnimation 2s ease";
+    }, 3800);
+  },
+  false,
+);
+document.addEventListener(
+  "DOMContentLoaded",
+  function() {
+    setTimeout(function() {    document.getElementById("loading").style.opacity = "0";
+    }, 3800);
+  },
+  false,
+);
+document.addEventListener(
+  "DOMContentLoaded",
+  function() {
+    setTimeout(function() {    document.getElementById("loading").style.display = "none";
+    }, 5200);
+  },
+  false,
+);
+
+dodisplayumennone.addEventListener(
+  "DOMContentLoaded",
+  function() {
+    setTimeout(function() {
+      document.getElementById("loading-center").className = "zoomOut";
+    }, 3200);
+  },
+  false
+);
+
+
+document.addEventListener(
+  "DOMContentLoaded",
+  function() {
+    setTimeout(function() {
+      document.getElementById("block-1").className = "slideInUp";
+    }, 3800);
+
+  },
+  false
+);
+
+
+
+
+
+
+
+
+
